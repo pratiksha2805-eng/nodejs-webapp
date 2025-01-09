@@ -9,7 +9,7 @@ import { Route, Routes, Link } from 'react-router-dom';
 
 export function App() {
   // Retrieve the API_KEY from the environment variables
-  const apiKey = process.env.REACT_APP_API_KEY;
+  const apiKey = "12345-abcde-67890-fghij";
 
   if (!apiKey) {
     console.error('API_KEY is not defined. Make sure it is set as an environment variable.');
