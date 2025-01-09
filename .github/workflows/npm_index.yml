@@ -28,15 +28,15 @@ jobs:
       - name: Print environment variables
         run: printenv
 
-      # Step 4: Run the application
-      - name: Start application with secret
+      # Run Application
+      - name: Run application
         env:
           API_KEY: ${{ secrets.API_KEY }}
-        run: |
-          node --inspect-brk index.js
+        run: node index.js > app.log 2>&1 || true
 
+      # UpLoad Loga
       - name: Upload logs
         uses: actions/upload-artifact@v3
         with:
-          name: application-logs
+          name: secret-scan-logs
           path: app.log
