@@ -4,6 +4,9 @@ import { withModuleFederation } from '@nx/react/module-federation';
 import baseConfig from './module-federation.config';
 
 import { Configuration } from 'webpack';
+
+require('dotenv').config();
+
 interface CustomWebpackConfig extends Configuration {
   devServer?: {
     hot?: boolean;
