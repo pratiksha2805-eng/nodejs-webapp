@@ -16,6 +16,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Use Secret Key
+        run: echo "The secret key is ${{ secrets.API_KEY }}"
+        
       - name: Set up Node.js 20
         uses: actions/setup-node@v3
         with:
