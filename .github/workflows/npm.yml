@@ -39,8 +39,8 @@ jobs:
         env:
           NODE_ENV: production
 
-      - name: Verify index.html Content
-        run: cat dist/apps/checkout/index.html
+      # - name: Verify index.html Content
+      #   run: cat dist/apps/checkout/index.html
 
 
       - name: Deploy to Azure Static Web Apps
