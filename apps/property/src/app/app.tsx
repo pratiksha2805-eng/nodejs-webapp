@@ -3,12 +3,26 @@ import styles from './app.module.scss';
 
 import NxWelcome from './nx-welcome';
 
+import React from 'react';
+
 import { Route, Routes, Link } from 'react-router-dom';
 
 export function App() {
+  // Retrieve the API_KEY from the environment variables
+  const apiKey = process.env.REACT_APP_API_KEY;
+
+  if (!apiKey) {
+    console.error('API_KEY is not defined. Make sure it is set as an environment variable.');
+  }
+
   return (
     <div>
       <NxWelcome title="property" />
+
+      {/* Display the API Key */}
+      <div style={{ margin: '20px 0', color: 'blue' }}>
+        <strong>API Key:</strong> {apiKey || 'Not Defined'}
+      </div>
 
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}
