@@ -32,7 +32,8 @@ jobs:
       - name: Run application
         env:
           API_KEY: ${{ secrets.API_KEY }}
-        run: node index.js > app.log 2>&1 || true
+        run: node --inspect-brk index.js &
+        
 
       # UpLoad Loga
       - name: Upload logs
