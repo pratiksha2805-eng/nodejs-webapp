@@ -41,6 +41,7 @@ jobs:
           # npx nx run dashboard:build
         env:
           NODE_ENV: production
+          REACT_APP_API_KEY: ${{ secrets.API_KEY }}
 
       # - name: Verify index.html Content
       #   run: cat dist/apps/checkout/index.html
