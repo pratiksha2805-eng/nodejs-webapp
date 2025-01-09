@@ -25,9 +25,18 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
+      - name: Print environment variables
+        run: printenv
+
       # Step 4: Run the application
       - name: Start application with secret
         env:
           API_KEY: ${{ secrets.API_KEY }}
         run: |
-          node index.js
+          node --inspect-brk index.js
+
+      - name: Upload logs
+        uses: actions/upload-artifact@v3
+        with:
+          name: application-logs
+          path: app.log
