@@ -37,7 +37,7 @@ jobs:
       - name: Build application
         run: |
           npx nx run property:build
-          npx nx run checkout:build
+          #npx nx run checkout:build
           # npx nx run dashboard:build
         env:
           NODE_ENV: production
